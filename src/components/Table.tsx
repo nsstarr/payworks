@@ -7,9 +7,12 @@ const Table = () => {
     <div className="overflow-x-auto">
       <table className="w-full table-auto">
         <thead>
-          <tr className="bg-gray-100 text-left">
+          <tr className="border border-blue-200 bg-white-200 text-left">
             <th className="px-6 py-3 text-xs font-medium uppercase tracking-wider text-gray-500">
-              Invoice
+              Invoice Number
+            </th>
+            <th className="px-6 py-3 text-xs font-medium uppercase tracking-wider text-gray-500">
+              Supplier
             </th>
             <th className="px-6 py-3 text-xs font-medium uppercase tracking-wider text-gray-500">
               Invoice Date
@@ -34,13 +37,8 @@ const Table = () => {
                 </div>
               </td>
               <td className="whitespace-nowrap px-6 py-4">
-                <div className="text-gray-800">
-                  {formatDate(invoice.posted_date)}
-                </div>
-              </td>
-              <td className="whitespace-nowrap px-6 py-4">
-                <div className="text-gray-800">
-                  {formatDate(invoice.due_date)}
+                <div className="flex items-center gap-3">
+                  <div className="text-gray-800">{invoice.supplier}</div>
                 </div>
               </td>
               <td className="whitespace-nowrap px-6 py-4">
@@ -49,6 +47,16 @@ const Table = () => {
                     style: "currency",
                     currency: "GBP",
                   }).format(invoice.amount)}
+                </div>
+              </td>
+              <td className="whitespace-nowrap px-6 py-4">
+                <div className="text-gray-800">
+                  {formatDate(invoice.posted_date)}
+                </div>
+              </td>
+              <td className="whitespace-nowrap px-6 py-4">
+                <div className="text-gray-800">
+                  {formatDate(invoice.due_date)}
                 </div>
               </td>
               <td className="whitespace-nowrap px-6 py-4">

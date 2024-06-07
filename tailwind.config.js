@@ -41,6 +41,9 @@ module.exports = {
           600: "#040440", // nav gradienr color 1
           700: "#484886", // filled in checkbox
         },
+        blue: {
+          200: "#A8ADC7"
+        },
         pink: {
           100: "#EBE6F2",
           500: "#EB40C7",
