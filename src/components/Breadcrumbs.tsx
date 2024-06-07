@@ -3,7 +3,7 @@ const Breadcrumbs = () => {
     <nav aria-label="Breadcrumb">
       <ul className="flex text-black-500">
         <li>
-          <a href="/" className="px-3 underline underline-offset-2">
+          <a href="/" className="pr-3 underline underline-offset-2">
             Payments
           </a>
         </li>

@@ -1,12 +1,10 @@
-import { useState } from "react";
 import Nav from "./components/Nav";
 import "./styles.css";
-import PagePayments from "./pages/Payments";
+import PagePayments from "./pages/PagePayments";
 
 function App() {
-  const [count, setCount] = useState(0);
   return (
-    <main className="flex m-0 min-h-screen bg-white-100">
+    <main className="m-0 flex min-h-screen bg-white-100">
       <Nav />
       <PagePayments />
     </main>

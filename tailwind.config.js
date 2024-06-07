@@ -28,6 +28,7 @@ module.exports = {
         },
         purple: {
           100: "#F2F3F9",
+          150: "#EAECF2",
           200: "#7B809F",
           400: "#2D2D69",
           500: "#6750A4", // secondary button color
