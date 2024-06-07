@@ -1,5 +1,6 @@
 import data from "../data/invoices.json";
-
+import { formatDate } from "../utils/date-utils";
+import { capitalizeFirstLetter } from "../utils/string-utils";
 
 const Table = () => {
   return (
@@ -33,10 +34,14 @@ const Table = () => {
                 </div>
               </td>
               <td className="whitespace-nowrap px-6 py-4">
-                <div className="text-gray-800">{invoice.posted_date}</div>
+                <div className="text-gray-800">
+                  {formatDate(invoice.posted_date)}
+                </div>
               </td>
               <td className="whitespace-nowrap px-6 py-4">
-                <div className="text-gray-800">{invoice.due_date}</div>
+                <div className="text-gray-800">
+                  {formatDate(invoice.due_date)}
+                </div>
               </td>
               <td className="whitespace-nowrap px-6 py-4">
                 <div className="text-gray-800">
@@ -47,7 +52,9 @@ const Table = () => {
                 </div>
               </td>
               <td className="whitespace-nowrap px-6 py-4">
-                <div className="text-gray-800">{invoice.status}</div>
+                <div className="text-gray-800">
+                  {capitalizeFirstLetter(invoice.status)}
+                </div>
               </td>
             </tr>
           ))}
