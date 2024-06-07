@@ -4,33 +4,36 @@ import { capitalizeFirstLetter } from "../utils/string-utils";
 
 const Table = () => {
   return (
-    <div className="overflow-x-auto">
-      <table className="w-full table-auto">
+    <div className="w-full overflow-x-auto">
+      <table className="w-full table-auto border border-blue-200">
         <thead>
-          <tr className="border border-blue-200 bg-white-200 text-left">
-            <th className="px-6 py-3 text-xs font-medium uppercase tracking-wider text-gray-500">
-              Invoice Number
-            </th>
-            <th className="px-6 py-3 text-xs font-medium uppercase tracking-wider text-gray-500">
-              Supplier
-            </th>
-            <th className="px-6 py-3 text-xs font-medium uppercase tracking-wider text-gray-500">
-              Invoice Date
-            </th>
-            <th className="px-6 py-3 text-xs font-medium uppercase tracking-wider text-gray-500">
-              Due Date
-            </th>
-            <th className="px-6 py-3 text-xs font-medium uppercase tracking-wider text-gray-500">
-              Amount
-            </th>
-            <th className="px-6 py-3 text-xs font-medium uppercase tracking-wider text-gray-500">
-              Status
-            </th>
-          </tr>
+            <tr className="rounded-2xl border border-blue-200 bg-white-200 text-left">
+              <th className="px-6 py-3 text-xs font-medium uppercase tracking-wider text-gray-500">
+                Invoice Number
+              </th>
+              <th className="px-6 py-3 text-xs font-medium uppercase tracking-wider text-gray-500">
+                Supplier
+              </th>
+              <th className="px-6 py-3 text-xs font-medium uppercase tracking-wider text-gray-500">
+                Invoice Date
+              </th>
+              <th className="px-6 py-3 text-xs font-medium uppercase tracking-wider text-gray-500">
+                Due Date
+              </th>
+              <th className="px-6 py-3 text-xs font-medium uppercase tracking-wider text-gray-500">
+                Amount
+              </th>
+              <th className="px-6 py-3 text-xs font-medium uppercase tracking-wider text-gray-500">
+                Status
+              </th>
+            </tr>
         </thead>
         <tbody className="divide-y divide-gray-200">
           {data.pay_run.invoices.map((invoice) => (
-            <tr key={invoice.supplier_reference} className="text-sm text-gray-500">
+            <tr
+              key={invoice.supplier_reference}
+              className="text-sm text-gray-500"
+            >
               <td className="whitespace-nowrap px-6 py-4">
                 <div className="flex items-center gap-3">
                   <div className="text-gray-800">{invoice.invoice_number}</div>
