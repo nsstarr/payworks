@@ -30,7 +30,7 @@ const Table = () => {
         </thead>
         <tbody className="divide-y divide-gray-200">
           {data.pay_run.invoices.map((invoice) => (
-            <tr key={invoice.invoice_number} className="text-sm text-gray-500">
+            <tr key={invoice.supplier_reference} className="text-sm text-gray-500">
               <td className="whitespace-nowrap px-6 py-4">
                 <div className="flex items-center gap-3">
                   <div className="text-gray-800">{invoice.invoice_number}</div>
