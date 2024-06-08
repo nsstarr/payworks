@@ -1,3 +1,4 @@
+import { ArrowDown } from "./glyphs/arrow-down";
 
 const Filters = () => {
   return (
@@ -15,7 +16,7 @@ const Filters = () => {
             name="search"
             placeholder="Search invoice..."
             type="text"
-            className="rounded-xl border border-gray-300 px-3 py-2 xl:min-w-64"
+            className="rounded-xl border border-gray-300 px-4 py-2 xl:min-w-64"
             value=""
             onChange={(e) => {
               console.log(e.target.value);
@@ -25,7 +26,7 @@ const Filters = () => {
           <select
             id="sort"
             name="sort"
-            className="rounded-xl border bg-white-100 p-2 text-black-600 shadow-md"
+            className="filter-select cursor-pointer rounded-xl border bg-white-100 px-3 text-black-600 shadow-md"
             value="sort"
             onChange={() => {}}
           >
@@ -35,7 +36,7 @@ const Filters = () => {
           <select
             id="category"
             name="category"
-            className="rounded-xl border bg-white-100 p-2 text-black-600 shadow-md"
+            className="filter-select cursor-pointer rounded-xl border bg-white-100 px-3 text-black-600 shadow-md"
             value="category"
             onChange={() => {}}
           >
