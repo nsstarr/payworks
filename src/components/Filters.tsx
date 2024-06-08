@@ -1,14 +1,14 @@
 const Filters = () => {
   return (
     <form
-      className="control-panel rounded-lg bg-gray-100 p-4"
+      className="control-panel rounded-lg bg-gray-100 py-4"
       onSubmit={(e) => {
         e.preventDefault();
         console.log("Form submitted");
       }}
     >
       <fieldset>
-        <div className="mb-4 flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-4">
           <input
             id="search"
             name="search"

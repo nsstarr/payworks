@@ -43,7 +43,7 @@ module.exports = {
           700: "#484886", // filled in checkbox
         },
         blue: {
-          200: "#A8ADC7"
+          200: "#A8ADC7",
         },
         pink: {
           100: "#EBE6F2",
@@ -52,7 +52,7 @@ module.exports = {
         gray: {
           100: "#F4F5F7",
           150: "#CAC4D0", // toast text color
-
+          200: "#D9D9D9",
         },
       },
     },

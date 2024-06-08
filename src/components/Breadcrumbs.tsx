@@ -8,10 +8,10 @@ const Breadcrumbs = () => {
           </a>
         </li>
         <li>
-          <span>{">"}</span>{" "}
+          <span>{">"}</span>
           <a href="/products" className="px-3">
             Pay Run
-          </a>{" "}
+          </a>
           <span>{">"}</span>
         </li>
         <li>
