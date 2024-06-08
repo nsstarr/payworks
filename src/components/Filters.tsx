@@ -8,7 +8,7 @@ const Filters = () => {
         console.log("Form submitted");
       }}
     >
-      <fieldset className="p-4">
+      <fieldset>
         <div className="mb-4 flex flex-wrap gap-4">
           <input
             id="search"
