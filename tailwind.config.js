@@ -53,6 +53,7 @@ module.exports = {
           100: "#F4F5F7",
           150: "#CAC4D0", // toast text color
           200: "#D9D9D9",
+          400: "#5C5C5C",
         },
       },
     },
