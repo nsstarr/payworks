@@ -9,6 +9,9 @@ const Table = () => {
         <thead>
           <tr className="border-b border-blue-200 bg-white-200 text-left">
             <th className="rounded-tl-2xl px-6 py-3 font-medium tracking-wider text-black-800">
+              <input type="checkbox" />
+            </th>
+            <th className="rounded-tl-2xl px-6 py-3 font-medium tracking-wider text-black-800">
               Invoice Number
             </th>
             <th className="px-6 py-3 font-medium tracking-wider text-black-800">
@@ -38,6 +41,9 @@ const Table = () => {
                   : ""
               }`}
             >
+              <td className="whitespace-nowrap px-6 py-4">
+                <input type="checkbox" />
+              </td>
               <td className="whitespace-nowrap px-6 py-4">
                 <div className="flex items-center gap-3">
                   <div className="text-gray-400">{invoice.invoice_number}</div>
