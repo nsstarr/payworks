@@ -1,5 +1,3 @@
-import { ArrowDown } from "./glyphs/arrow-down";
-
 const Filters = () => {
   return (
     <form
@@ -51,6 +49,5 @@ const Filters = () => {
     </form>
   );
 };
-
 
 export default Filters;
