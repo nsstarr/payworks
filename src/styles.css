@@ -13,15 +13,9 @@ body,
 
 .filter-select {
   appearance: none;
-  padding-right: 5px;
-}
-
-.custom-select::after {
-  content: "▼";
-  background-image: url("./components/glyphs/arrow-down.tsx");
-  position: absolute;
-  right: 1rem; 
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 2.5rem; /* Adjust this based on the width of the arrow */
+  background: url('./assets/svg/down-arrow.svg') no-repeat right 0.75rem center;
+  background-size: 1rem;
 }
