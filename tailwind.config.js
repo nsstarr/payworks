@@ -23,6 +23,7 @@ module.exports = {
         },
         black: {
           500: "#595959",
+          600: "#606060",
           800: "#2E2E2E",
           900: "#211F26", //toast bg color
         },
