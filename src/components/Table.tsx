@@ -6,6 +6,7 @@ import InvoiceSelect from "./InvoiceSelect";
 type TableProps = {
   searchTerm: string;
   selectedOption: string;
+  setSelectedOption: (option: string) => void;
   excludedInvoices: string[];
   handleCheckboxChange: (supplierReference: string, isChecked: boolean) => void;
 };
@@ -13,6 +14,7 @@ type TableProps = {
 const Table = ({
   searchTerm,
   selectedOption,
+  setSelectedOption,
   excludedInvoices,
   handleCheckboxChange,
 }: TableProps) => {
@@ -30,7 +32,7 @@ const Table = ({
             <th className="rounded-tl-2xl px-2 py-3 font-medium tracking-wider text-black-800">
               <InvoiceSelect
                 selectedOption={selectedOption}
-                setSelectedOption={() => {}}
+                setSelectedOption={setSelectedOption}
               />
             </th>
             <th className="px-6 py-3 font-medium tracking-wider text-black-800">
@@ -66,16 +68,14 @@ const Table = ({
               <td className="whitespace-nowrap px-6 py-4">
                 <input
                   type="checkbox"
-                  checked={excludedInvoices.includes(
-                    invoice.supplier_reference
-                  )}
+                  checked={excludedInvoices.includes(invoice.supplier_reference)}
                   onChange={(e) =>
                     handleCheckboxChange(
                       invoice.supplier_reference,
                       e.target.checked
                     )
                   }
-                  disabled={selectedOption !== "Exclude"}
+          
                 />
               </td>
               <td className="whitespace-nowrap px-6 py-4">

@@ -56,6 +56,7 @@ const PagePayments = () => {
       <Table
         searchTerm={searchTerm}
         selectedOption={selectedOption}
+        setSelectedOption={setSelectedOption}
         excludedInvoices={excludedInvoices}
         handleCheckboxChange={handleCheckboxChange}
       />
