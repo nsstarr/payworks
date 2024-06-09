@@ -1,5 +1,6 @@
 import { Check } from "./glyphs/check";
 import data from "../data/invoices.json";
+import { IconExclude } from "./glyphs/exclude";
 
 type InvoiceButtonProps = {
   handleInvoiceButtonClick: () => void;
@@ -26,7 +27,11 @@ const InvoiceButton = ({
       className="my-auto flex max-h-10 items-center gap-[5px] rounded-full bg-gradient-to-r from-purple-700 via-purple-750 to-purple-800 px-[18px] py-2 text-white-200 opacity-80 shadow-md"
       onClick={handleInvoiceButtonClick}
     >
-      <Check title="Check mark" />
+      {selectedOption === "Exclude" ? (
+        <IconExclude title="Exclude invoices" />
+      ) : (
+        <Check title="Approve invoices" />
+      )}
       {buttonText}
     </button>
   );
