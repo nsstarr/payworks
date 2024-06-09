@@ -13,7 +13,7 @@ const PagePayments = () => {
       .map((invoice) => invoice.supplier_reference)
   );
 
-  const handleCheckboxChange = (supplierReference: any, isChecked: any) => {
+  const handleCheckboxChange = (supplierReference: string, isChecked: boolean) => {
     setExcludedInvoices((prev) =>
       isChecked
         ? [...prev, supplierReference]
