@@ -9,12 +9,15 @@ type InvoiceControlPanelProps = {
   selectedOption: string;
   setSelectedOption: (selectedOption: string) => void;
   handleInvoiceButtonClick: () => void;
+  checkedCount: number;
 };
 
 const InvoiceControlPanel = ({
   searchTerm,
   setSearchTerm,
+  selectedOption,
   handleInvoiceButtonClick,
+  checkedCount,
 }: InvoiceControlPanelProps) => {
   return (
     <section className="flex items-center justify-between">
@@ -24,7 +27,11 @@ const InvoiceControlPanel = ({
           <Filters searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
           <ExportButton />
         </div>
-        <InvoiceButton handleInvoiceButtonClick={handleInvoiceButtonClick} />
+        <InvoiceButton
+          handleInvoiceButtonClick={handleInvoiceButtonClick}
+          selectedOption={selectedOption}
+          checkedCount={checkedCount}
+        />
       </section>
     </section>
   );

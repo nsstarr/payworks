@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Breadcrumbs from "../components/Breadcrumbs";
 import InvoiceControlPanel from "../components/InvoiceControlPanel";
 import Table from "../components/Table";
@@ -12,8 +12,16 @@ const PagePayments = () => {
       .filter((invoice) => invoice.excluded)
       .map((invoice) => invoice.supplier_reference)
   );
+  const [checkedCount, setCheckedCount] = useState(0);
 
-  const handleCheckboxChange = (supplierReference: string, isChecked: boolean) => {
+  useEffect(() => {
+    setCheckedCount(excludedInvoices.length);
+  }, [excludedInvoices]);
+
+  const handleCheckboxChange = (
+    supplierReference: string,
+    isChecked: boolean
+  ) => {
     setExcludedInvoices((prev) =>
       isChecked
         ? [...prev, supplierReference]
@@ -43,6 +51,7 @@ const PagePayments = () => {
         selectedOption={selectedOption}
         setSelectedOption={setSelectedOption}
         handleInvoiceButtonClick={handleInvoiceButtonClick}
+        checkedCount={checkedCount}
       />
       <Table
         searchTerm={searchTerm}
