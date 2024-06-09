@@ -1,4 +1,9 @@
-const Filters = () => {
+type FiltersProps = {
+  searchTerm: string;
+  setSearchTerm: (searchTerm: string) => void;
+};
+
+const Filters = ({ searchTerm, setSearchTerm }: FiltersProps) => {
   return (
     <form
       className="control-panel rounded-lg bg-gray-100 py-4"
@@ -15,9 +20,9 @@ const Filters = () => {
             placeholder="Search invoice..."
             type="text"
             className="rounded-xl border border-gray-300 px-4 py-2 xl:min-w-64"
-            value=""
+            value={searchTerm}
             onChange={(e) => {
-              console.log(e.target.value);
+              setSearchTerm(e.target.value);
             }}
           />
 

@@ -2,7 +2,15 @@ import data from "../data/invoices.json";
 import { formatDate } from "../utils/date-utils";
 import { capitalizeFirstLetter } from "../utils/string-utils";
 
-const Table = () => {
+type TableProps = {
+  searchTerm: string;
+};
+
+const Table = ({ searchTerm }: TableProps) => {
+  const filteredInvoices = data.pay_run.invoices.filter((invoice) =>
+    invoice.supplier.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="w-full overflow-x-auto rounded-2xl border border-blue-200">
       <table className="w-full table-auto">
@@ -11,7 +19,7 @@ const Table = () => {
             <th className="rounded-tl-2xl px-6 py-3 font-medium tracking-wider text-black-800">
               <input type="checkbox" />
             </th>
-            <th className="x-6 py-3 font-medium tracking-wider text-black-800">
+            <th className="px-6 py-3 font-medium tracking-wider text-black-800">
               Invoice Number
             </th>
             <th className="px-6 py-3 font-medium tracking-wider text-black-800">
@@ -32,11 +40,11 @@ const Table = () => {
           </tr>
         </thead>
         <tbody className="divide-y divide-gray-200">
-          {data.pay_run.invoices.map((invoice, index) => (
+          {filteredInvoices.map((invoice, index) => (
             <tr
               key={invoice.supplier_reference}
               className={`text-gray-400 ${
-                index === data.pay_run.invoices.length - 1
+                index === filteredInvoices.length - 1
                   ? "rounded-bl-2xl rounded-br-2xl"
                   : ""
               }`}
