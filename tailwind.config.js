@@ -28,6 +28,7 @@ module.exports = {
           900: "#211F26", //toast bg color
         },
         purple: {
+          50: "#D5D9EA",
           100: "#F2F3F9",
           150: "#EAECF2",
           200: "#7B809F",

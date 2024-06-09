@@ -1,6 +1,7 @@
 import data from "../data/invoices.json";
 import { formatDate } from "../utils/date-utils";
 import { capitalizeFirstLetter } from "../utils/string-utils";
+import InvoiceSelect from "./InvocieSelect";
 
 type TableProps = {
   searchTerm: string;
@@ -16,8 +17,8 @@ const Table = ({ searchTerm }: TableProps) => {
       <table className="w-full table-auto">
         <thead>
           <tr className="border-b border-blue-200 bg-white-200 text-left">
-            <th className="rounded-tl-2xl px-6 py-3 font-medium tracking-wider text-black-800">
-              <input type="checkbox" />
+            <th className="rounded-tl-2xl px-2 py-3 font-medium tracking-wider text-black-800">
+              <InvoiceSelect />
             </th>
             <th className="px-6 py-3 font-medium tracking-wider text-black-800">
               Invoice Number
