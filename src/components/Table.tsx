@@ -1,16 +1,26 @@
 import data from "../data/invoices.json";
 import { formatDate } from "../utils/date-utils";
 import { capitalizeFirstLetter } from "../utils/string-utils";
-import InvoiceSelect from "./InvocieSelect";
+import InvoiceSelect from "./InvoiceSelect";
 
 type TableProps = {
   searchTerm: string;
+  selectedOption: string;
+  excludedInvoices: string[];
+  handleCheckboxChange: (supplierReference: string, isChecked: boolean) => void;
 };
 
-const Table = ({ searchTerm }: TableProps) => {
+const Table = ({
+  searchTerm,
+  selectedOption,
+  excludedInvoices,
+  handleCheckboxChange,
+}: TableProps) => {
   const filteredInvoices = data.pay_run.invoices.filter((invoice) =>
     invoice.supplier.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  console.log("Current excluded invoices state:", excludedInvoices);
 
   return (
     <div className="w-full overflow-x-auto rounded-2xl border border-blue-200">
@@ -18,7 +28,10 @@ const Table = ({ searchTerm }: TableProps) => {
         <thead>
           <tr className="border-b border-blue-200 bg-white-200 text-left">
             <th className="rounded-tl-2xl px-2 py-3 font-medium tracking-wider text-black-800">
-              <InvoiceSelect />
+              <InvoiceSelect
+                selectedOption={selectedOption}
+                setSelectedOption={() => {}}
+              />
             </th>
             <th className="px-6 py-3 font-medium tracking-wider text-black-800">
               Invoice Number
@@ -51,7 +64,19 @@ const Table = ({ searchTerm }: TableProps) => {
               }`}
             >
               <td className="whitespace-nowrap px-6 py-4">
-                <input type="checkbox" />
+                <input
+                  type="checkbox"
+                  checked={excludedInvoices.includes(
+                    invoice.supplier_reference
+                  )}
+                  onChange={(e) =>
+                    handleCheckboxChange(
+                      invoice.supplier_reference,
+                      e.target.checked
+                    )
+                  }
+                  disabled={selectedOption !== "Exclude"}
+                />
               </td>
               <td className="whitespace-nowrap px-6 py-4">
                 <div className="flex items-center gap-3">

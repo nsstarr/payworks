@@ -6,9 +6,16 @@ import PageHeading from "./PageHeading";
 type InvoiceControlPanelProps = {
   searchTerm: string;
   setSearchTerm: (searchTerm: string) => void;
+  selectedOption: string;
+  setSelectedOption: (selectedOption: string) => void;
+  handleInvoiceButtonClick: () => void;
 };
 
-const InvoiceControlPanel = ({searchTerm, setSearchTerm} :InvoiceControlPanelProps) => {
+const InvoiceControlPanel = ({
+  searchTerm,
+  setSearchTerm,
+  handleInvoiceButtonClick,
+}: InvoiceControlPanelProps) => {
   return (
     <section className="flex items-center justify-between">
       <PageHeading />
@@ -17,7 +24,7 @@ const InvoiceControlPanel = ({searchTerm, setSearchTerm} :InvoiceControlPanelPro
           <Filters searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
           <ExportButton />
         </div>
-        <InvoiceButton />
+        <InvoiceButton handleInvoiceButtonClick={handleInvoiceButtonClick} />
       </section>
     </section>
   );
