@@ -11,7 +11,7 @@ const Table = () => {
             <th className="rounded-tl-2xl px-6 py-3 font-medium tracking-wider text-black-800">
               <input type="checkbox" />
             </th>
-            <th className="rounded-tl-2xl px-6 py-3 font-medium tracking-wider text-black-800">
+            <th className="x-6 py-3 font-medium tracking-wider text-black-800">
               Invoice Number
             </th>
             <th className="px-6 py-3 font-medium tracking-wider text-black-800">
