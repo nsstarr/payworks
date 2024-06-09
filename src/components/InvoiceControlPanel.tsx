@@ -1,4 +1,4 @@
-import ApproveButton from "./ApproveButton";
+import ApproveButton from "./InvoiceButton";
 import ExportButton from "./ExportButton";
 import Filters from "./Filters";
 import PageHeading from "./PageHeading";
