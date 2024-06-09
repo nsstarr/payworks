@@ -1,4 +1,4 @@
-import ApproveButton from "./InvoiceButton";
+import InvoiceButton from "./InvoiceButton";
 import ExportButton from "./ExportButton";
 import Filters from "./Filters";
 import PageHeading from "./PageHeading";
@@ -17,7 +17,7 @@ const InvoiceControlPanel = ({searchTerm, setSearchTerm} :InvoiceControlPanelPro
           <Filters searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
           <ExportButton />
         </div>
-        <ApproveButton />
+        <InvoiceButton />
       </section>
     </section>
   );
