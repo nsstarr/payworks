@@ -30,29 +30,42 @@ const PagePayments = () => {
     );
   };
 
- const handleInvoiceButtonClick = () => {
-   if (selectedOption === "Exclude") {
-     const updatedInvoices = invoices.map((invoice) => {
-       if (excludedInvoices.includes(invoice.supplier_reference)) {
-         return { ...invoice, excluded: true };
-       }
-       return invoice;
-     });
-     setInvoices(updatedInvoices);
-     console.log("Invoices after update:", updatedInvoices);
-     setExcludedInvoices([]);
-   } else if (selectedOption === "Approve") {
-     const updatedInvoices = invoices.map((invoice) => {
-       if (excludedInvoices.includes(invoice.supplier_reference)) {
-         return { ...invoice, status: "approved" };
-       }
-       return invoice;
-     });
-     setInvoices(updatedInvoices);
-     console.log("Invoices after update:", updatedInvoices);
-     setExcludedInvoices([]);
-   }
- };
+  const handleInvoiceButtonClick = () => {
+    if (selectedOption === "Exclude") {
+      const updatedInvoices = invoices.map((invoice) => {
+        if (excludedInvoices.includes(invoice.supplier_reference)) {
+          return { ...invoice, excluded: true };
+        }
+        return invoice;
+      });
+      setInvoices(updatedInvoices);
+      console.log("Invoices after update:", updatedInvoices);
+      setExcludedInvoices([]);
+    } else if (selectedOption === "Approve") {
+      const updatedInvoices = invoices.map((invoice) => {
+        if (excludedInvoices.includes(invoice.supplier_reference)) {
+          return { ...invoice, status: "approved" };
+        }
+        return invoice;
+      });
+      setInvoices(updatedInvoices);
+      console.log("Invoices after update:", updatedInvoices);
+      setExcludedInvoices([]);
+    }
+  };
+
+  const handleDropdownOptionSelect = (option: string, supplier: string) => {
+    if (option === "Exclude supplier") {
+      const updatedInvoices = invoices.map((invoice) => {
+        if (invoice.supplier === supplier) {
+          return { ...invoice, excluded: true };
+        }
+        return invoice;
+      });
+      setInvoices(updatedInvoices);
+      console.log("Invoices after excluding supplier:", updatedInvoices);
+    }
+  };
 
   return (
     <div className="flex w-full flex-col gap-4 bg-white-100 px-20 pt-4">
@@ -71,6 +84,7 @@ const PagePayments = () => {
         setSelectedOption={setSelectedOption}
         excludedInvoices={excludedInvoices}
         handleCheckboxChange={handleCheckboxChange}
+        handleDropdownOptionSelect={handleDropdownOptionSelect}
       />
     </div>
   );

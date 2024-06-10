@@ -1,7 +1,7 @@
 import data from "../data/invoices.json";
 import { formatDate } from "../utils/date-utils";
 import { capitalizeFirstLetter } from "../utils/string-utils";
-import EditButton from "./EditButton";
+import EditDropdown from "./EditDropdown";
 import InvoiceSelect from "./InvoiceSelect";
 
 type TableProps = {
@@ -10,6 +10,7 @@ type TableProps = {
   setSelectedOption: (option: string) => void;
   excludedInvoices: string[];
   handleCheckboxChange: (supplierReference: string, isChecked: boolean) => void;
+  handleDropdownOptionSelect: (option: string, supplier: string) => void;
 };
 
 const Table = ({
@@ -18,6 +19,7 @@ const Table = ({
   setSelectedOption,
   excludedInvoices,
   handleCheckboxChange,
+  handleDropdownOptionSelect,
 }: TableProps) => {
   const filteredInvoices = data.pay_run.invoices.filter((invoice) =>
     invoice.supplier.toLowerCase().includes(searchTerm.toLowerCase())
@@ -114,7 +116,11 @@ const Table = ({
                   </div>
                 </td>
                 <td className="whitespace-nowrap px-4 py-4 text-center">
-<EditButton/>
+                  <EditDropdown
+                    onOptionSelect={(option) =>
+                      handleDropdownOptionSelect(option, invoice.supplier)
+                    }
+                  />
                 </td>
               </tr>
             ))}
