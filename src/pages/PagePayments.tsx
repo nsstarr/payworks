@@ -13,6 +13,7 @@ const PagePayments = () => {
       .map((invoice) => invoice.supplier_reference)
   );
   const [checkedCount, setCheckedCount] = useState(0);
+  const [invoices, setInvoices] = useState(data.pay_run.invoices);
 
   useEffect(() => {
     setCheckedCount(excludedInvoices.length);
@@ -29,18 +30,29 @@ const PagePayments = () => {
     );
   };
 
-  const handleInvoiceButtonClick = () => {
-    if (selectedOption === "Exclude") {
-      data.pay_run.invoices = data.pay_run.invoices.map((invoice) => {
-        if (excludedInvoices.includes(invoice.supplier_reference)) {
-          return { ...invoice, excluded: true };
-        }
-        return invoice;
-      });
-      console.log("Invoices after update:", data.pay_run.invoices);
-      setExcludedInvoices([]);
-    }
-  };
+ const handleInvoiceButtonClick = () => {
+   if (selectedOption === "Exclude") {
+     const updatedInvoices = invoices.map((invoice) => {
+       if (excludedInvoices.includes(invoice.supplier_reference)) {
+         return { ...invoice, excluded: true };
+       }
+       return invoice;
+     });
+     setInvoices(updatedInvoices);
+     console.log("Invoices after update:", updatedInvoices);
+     setExcludedInvoices([]);
+   } else if (selectedOption === "Approve") {
+     const updatedInvoices = invoices.map((invoice) => {
+       if (excludedInvoices.includes(invoice.supplier_reference)) {
+         return { ...invoice, status: "approved" };
+       }
+       return invoice;
+     });
+     setInvoices(updatedInvoices);
+     console.log("Invoices after update:", updatedInvoices);
+     setExcludedInvoices([]);
+   }
+ };
 
   return (
     <div className="flex w-full flex-col gap-4 bg-white-100 px-20 pt-4">
