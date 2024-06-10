@@ -1,8 +1,8 @@
 import data from "../data/invoices.json";
 import { formatDate } from "../utils/date-utils";
 import { capitalizeFirstLetter } from "../utils/string-utils";
+import EditButton from "./EditButton";
 import InvoiceSelect from "./InvoiceSelect";
-import { IconEdit } from "./glyphs/edit";
 
 type TableProps = {
   searchTerm: string;
@@ -114,7 +114,7 @@ const Table = ({
                   </div>
                 </td>
                 <td className="whitespace-nowrap px-4 py-4 text-center">
-                  <IconEdit title="Edit the invoice actions" />
+<EditButton/>
                 </td>
               </tr>
             ))}
