@@ -57,7 +57,7 @@ const Table = ({
               <th className="px-6 py-3 font-medium tracking-wider text-black-800">
                 Status
               </th>
-              <th className="px-2 py-3 font-medium tracking-wider text-black-800 lg:visible lg:rounded-tr-2xl">
+              <th className="hidden px-2 py-3 font-medium tracking-wider text-black-800 lg:visible lg:rounded-tr-2xl xl:block">
                 Actions
               </th>
             </tr>
@@ -115,7 +115,7 @@ const Table = ({
                     {capitalizeFirstLetter(invoice.status)}
                   </div>
                 </td>
-                <td className="whitespace-nowrap px-4 py-4 text-center">
+                <td className="hidden whitespace-nowrap px-4 py-4 text-center xl:block">
                   <EditDropdown
                     onOptionSelect={(option) =>
                       handleDropdownOptionSelect(option, invoice.supplier)

@@ -68,7 +68,7 @@ const PagePayments = () => {
   };
 
   return (
-    <div className="flex w-full flex-col gap-4 bg-white-100 px-20 pt-4">
+    <div className="flex w-full flex-col gap-4 bg-white-100 px-10 pt-4 xl:px-20">
       <Breadcrumbs />
       <InvoiceControlPanel
         searchTerm={searchTerm}
