@@ -11,35 +11,35 @@ const Nav = () => {
       id="navbar"
       className="left-0 flex min-h-screen flex-col bg-gradient-to-b from-deeppurple-600 to-deeppurple-500 px-4 font-medium text-white-200"
     >
-      <a className="tracking-tigh mx-auto px-8 pb-9 pt-7 text-xl font-semibold">
+      <a className="tracking-tigh mx-auto hidden px-8 pb-9 pt-7 text-xl font-semibold xl:block">
         <h1 className="flex rounded-3xl bg-gray-100/10 px-4 py-2 font-highlight font-semibold">
           <div className="text-pink-500">Pay</div>Works
         </h1>
       </a>
-      <ul className="flex flex-col gap-4">
-        <li className="flex cursor-pointer gap-2 px-3 tracking-tight text-purple-200">
+      <ul className="mt-5 flex flex-col gap-4 xl:mt-0">
+        <li className="flex cursor-pointer gap-2 tracking-tight text-purple-200 xl:px-3">
           <IconDashboard title="Dashboard icon" className="h-6 w-6" />
-          <a>Dashboard</a>
+          <a className="hidden xl:block">Dashboard</a>
         </li>
-        <li className="flex cursor-pointer gap-2 px-3 py-1.5 tracking-tight text-purple-200">
+        <li className="flex cursor-pointer gap-2 py-1.5 tracking-tight text-purple-200 xl:px-3">
           <IconHelpdesk title="Helpdesk icon" className="h-6 w-6" />
-          <a>Helpdesk</a>
+          <a className="hidden xl:block">Helpdesk</a>
         </li>
-        <li className="flex cursor-pointer gap-2 px-3 py-1.5 tracking-tight text-purple-200">
+        <li className="flex cursor-pointer gap-2 py-1.5 tracking-tight text-purple-200 xl:px-3">
           <IconReports title="Reports icon" className="h-6 w-6" />
-          <a>Reports</a>
+          <a className="hidden xl:block">Reports</a>
         </li>
-        <li className="flex cursor-pointer gap-2 px-3 py-1.5 tracking-tight text-purple-200">
+        <li className="flex cursor-pointer gap-2 py-1.5 tracking-tight text-purple-200 xl:px-3">
           <IconStatements title="Statements icon" className="h-6 w-6" />
-          <a>Statements</a>
+          <a className="hidden xl:block">Statements</a>
         </li>
-        <li className="flex cursor-pointer gap-2 rounded-md bg-purple-400 px-3 py-1.5 tracking-tight text-white-100">
+        <li className="flex cursor-pointer gap-2 rounded-md bg-purple-400 py-1.5 tracking-tight text-white-100 xl:px-3">
           <IconPayments title="Payments icon" className="h-6 w-6" />
-          <a>Payments</a>
+          <a className="hidden xl:block">Payments</a>
         </li>
-        <li className="flex cursor-pointer gap-2 px-3 py-1.5 tracking-tight text-purple-200">
+        <li className="flex cursor-pointer gap-2 py-1.5 tracking-tight text-purple-200 xl:px-3">
           <IconSettings title="Settings icon" className="h-6 w-6" />
-          <a>Settings</a>
+          <a className="hidden xl:block">Settings</a>
         </li>
       </ul>
     </nav>
