@@ -2,6 +2,7 @@ import data from "../data/invoices.json";
 import { formatDate } from "../utils/date-utils";
 import { capitalizeFirstLetter } from "../utils/string-utils";
 import InvoiceSelect from "./InvoiceSelect";
+import { IconEdit } from "./glyphs/edit";
 
 type TableProps = {
   searchTerm: string;
@@ -42,16 +43,19 @@ const Table = ({
               Supplier
             </th>
             <th className="px-6 py-3 font-medium tracking-wider text-black-800">
+              Amount
+            </th>
+            <th className="px-6 py-3 font-medium tracking-wider text-black-800">
               Invoice Date
             </th>
             <th className="px-6 py-3 font-medium tracking-wider text-black-800">
               Due Date
             </th>
             <th className="px-6 py-3 font-medium tracking-wider text-black-800">
-              Amount
-            </th>
-            <th className="rounded-tr-2xl px-6 py-3 font-medium tracking-wider text-black-800">
               Status
+            </th>
+            <th className="px-2 py-3 font-medium tracking-wider text-black-800 lg:visible lg:rounded-tr-2xl">
+              Actions
             </th>
           </tr>
         </thead>
@@ -68,14 +72,15 @@ const Table = ({
               <td className="whitespace-nowrap px-6 py-4">
                 <input
                   type="checkbox"
-                  checked={excludedInvoices.includes(invoice.supplier_reference)}
+                  checked={excludedInvoices.includes(
+                    invoice.supplier_reference
+                  )}
                   onChange={(e) =>
                     handleCheckboxChange(
                       invoice.supplier_reference,
                       e.target.checked
                     )
                   }
-          
                 />
               </td>
               <td className="whitespace-nowrap px-6 py-4">
@@ -110,6 +115,9 @@ const Table = ({
                 <div className="text-gray-400">
                   {capitalizeFirstLetter(invoice.status)}
                 </div>
+              </td>
+              <td className="cursor-pointer whitespace-nowrap px-4 py-4 text-center">
+                <IconEdit title="Edit the invoice actions" />
               </td>
             </tr>
           ))}
