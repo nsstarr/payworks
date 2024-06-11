@@ -31,7 +31,7 @@ const Table = ({
     <div className="w-full overflow-x-auto rounded-2xl border border-blue-200">
       <div className="table-container h-[calc(100vh-150px)] overflow-y-auto">
         <table className="w-full table-auto">
-          <thead className="bg-white sticky top-0">
+          <thead className="bg-white sticky top-0 z-10">
             <tr className="border-b border-blue-200 bg-white-200 text-left">
               <th className="rounded-tl-2xl px-2 py-3 font-medium tracking-wider text-black-800">
                 <InvoiceSelect
